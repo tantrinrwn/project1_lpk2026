@@ -2,14 +2,14 @@ import streamlit as st
 import math
 
 # --- KONFIGURASI HALAMAN ---
-st.set_page_config(page_title="ChemAssist Pro", page_icon="🧪", layout="centered")
+st.set_page_config(page_title="Asisten Lab ", page_icon="🧪", layout="centered")
 
-st.title("🧪 ChemAssist: All-in-One Lab Calculator (Pro)")
+st.title("🧪 Asisten Lab: Lab Kalkulator ")
 st.write("Aplikasi komprehensif praktikum kimia untuk tugas akhir Logika & Pemrograman.")
 st.markdown("---")
 
 # --- MEMBUAT NAVIGASI TAB ---
-tab1, tab2, tab3 = st.tabs(["💧 Pembuatan & Pengenceran", "🧬 Kalkulator pH Lengkap", "📦 Database Bahan Lab"])
+tab1, tab2, tab3 = st.tabs(["💧 Pembuatan & Pengenceran", "🧬 Kalkulator pH", "📦 Database Bahan Lab"])
 
 # =========================================================================
 # TAB 1: KALKULATOR LARUTAN MULTI-SATUAN
@@ -76,10 +76,10 @@ with tab1:
                 st.info(f"Encerkan {v1:.2f} mL stok hingga tanda batas labu takar {v2:.0f} mL.")
 
 # =========================================================================
-# TAB 2: KALKULATOR pH LENGKAP (KUAT & LEMAH)
+# TAB 2: KALKULATOR pH
 # =========================================================================
 with tab2:
-    st.header("Kalkulator pH Larutan Lengkap")
+    st.header("Kalkulator pH Larutan")
     
     kategori = st.selectbox("Kategori Larutan:", ["Asam Kuat", "Basa Kuat", "Asam Lemah", "Basa Lemah"])
     konsentrasi_ph = st.number_input("Konsentrasi Larutan (Molaritas):", min_value=1e-6, value=0.0100, format="%.5f")
@@ -119,7 +119,7 @@ with tab2:
         else: st.error("Sifat Larutan: BASA KUAT 🟪")
 
 # =========================================================================
-# TAB 3: DATABASE BAHAN LAB POPULER
+# TAB 3: DATABASE BAHAN LAB
 # =========================================================================
 with tab3:
     st.header("Database Bahan Kimia Laboratorium")
